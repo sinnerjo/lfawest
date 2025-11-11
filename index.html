@@ -1,3 +1,78 @@
-<html>
-this worked
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Under Construction</title>
+  <style>
+    body {
+      background-color: #ffff99;
+      color: #0000cc;
+      font-family: "Comic Sans MS", "Arial", sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: red;
+      text-shadow: 2px 2px yellow;
+      animation: blink 1.2s infinite alternate;
+    }
+
+    @keyframes blink {
+      from { opacity: 1; }
+      to { opacity: 0.4; }
+    }
+
+    img {
+      margin-top: 20px;
+    }
+
+    .construction {
+      margin-top: 30px;
+      font-weight: bold;
+      color: black;
+      background-color: #ffcc00;
+      border: 2px dashed red;
+      padding: 10px;
+      display: inline-block;
+    }
+
+    marquee {
+      font-size: 20px;
+      color: blue;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="rotatingHeader">Living Friends of Adam West</h1>
+
+  <div class="construction">
+    🚧 THIS PAGE IS UNDER CONSTRUCTION 🚧
+  </div>
+
+  <br>
+  <img src="https://www.animatedimages.org/data/media/695/animated-under-construction-image-0025.gif" alt="Under Construction">
+
+  <marquee behavior="scroll" direction="left">Check back soon for updates!</marquee>
+
+  <script>
+    const phrases = [
+      "Living Friends of Adam West",
+      "Larry Fine's Absurd West",
+      "Lemur Fighting Association of the West",
+      "Last Frontier: Agents of West",
+      "Laughing Friends Around West"
+    ];
+
+    let index = 0;
+    const header = document.getElementById("rotatingHeader");
+
+    setInterval(() => {
+      index = (index + 1) % phrases.length;
+      header.textContent = phrases[index];
+    }, 2000);
+  </script>
+</body>
 </html>

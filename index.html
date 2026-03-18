@@ -193,23 +193,64 @@
 
     .note a {
       color: white;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      text-decoration: none;
+    }
+
+    .location-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .location-link:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .pin-icon {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      background: var(--accent);
+      flex: 0 0 auto;
+      margin-top: -2px;
+    }
+
+    .pin-icon::after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #0a0c0f;
+      border-radius: 50%;
+      top: 4px;
+      left: 4px;
     }
 
     .hero-visual {
       position: relative;
       min-height: 100%;
-      border-radius: var(--radius);
+      border-radius: 34px;
       overflow: hidden;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.38);
       isolation: isolate;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      padding: 14px;
     }
 
     .hero-visual img {
       width: 100%;
       height: 100%;
+      border-radius: 24px;
       object-fit: contain;
       background: #0b0f13;
       min-height: 640px;
@@ -219,7 +260,7 @@
     .hero-visual::after {
       content: "";
       position: absolute;
-      inset: 0;
+      inset: 14px;
       background:
         linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.58)),
         linear-gradient(90deg, rgba(10,12,15,0.0), rgba(10,12,15,0.18));
@@ -541,7 +582,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">LFAWest.com</span>
+          <span class="eyebrow">Lou Fusz Athletic West</span>
           <h1>
             LFA West<br />
             <span class="outline">Soccer</span>
@@ -565,7 +606,10 @@
             </div>
             <div class="note" id="location">
               <strong>Location</strong>
-              <a href="https://cottlevillecityfields.com/" target="_blank" rel="noopener noreferrer">Cottleville City Fields</a>
+              <a class="location-link" href="https://cottlevillecityfields.com/" target="_blank" rel="noopener noreferrer">
+                <span class="pin-icon" aria-hidden="true"></span>
+                <span>Cottleville City Fields</span>
+              </a>
             </div>
           </div>
         </div>
@@ -601,7 +645,7 @@
   <footer>
     <div class="container footer-panel">
       <div class="brand"><img class="brand-logo" src="assets/lfawest-logo.png" alt="LFA West logo" /><span>LFA West Soccer Kickarounds</span></div>
-      <div>LFAWest.com</div>
+      
     </div>
   </footer>
 </body>

@@ -58,10 +58,20 @@
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       font-size: clamp(1.1rem, 1rem + 1vw, 1.65rem);
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      flex: 0 0 auto;
     }
 
     .brand span { color: var(--accent); }
@@ -181,6 +191,12 @@
       margin-bottom: 6px;
     }
 
+    .note a {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .hero-visual {
       position: relative;
       min-height: 100%;
@@ -194,8 +210,10 @@
     .hero-visual img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background: #0b0f13;
       min-height: 640px;
+      padding: 14px;
     }
 
     .hero-visual::after {
@@ -515,7 +533,7 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#top">LFA <span>West</span></a>
+      <a class="brand" href="#top"><img class="brand-logo" src="assets/lfawest-logo.png" alt="LFA West logo" /><span>LFA <span>West</span></span></a>
 </div>
   </header>
 
@@ -534,8 +552,7 @@
 
           <div class="hero-actions">
             <a class="button button-primary" href="#register">Register Now</a>
-            <a class="button button-secondary" href="#programs">View Programs</a>
-          </div>
+</div>
 
           <div class="hero-notes">
             <div class="note">
@@ -548,7 +565,7 @@
             </div>
             <div class="note" id="location">
               <strong>Location</strong>
-              Cottleville City Fields
+              <a href="https://cottlevillecityfields.com/" target="_blank" rel="noopener noreferrer">Cottleville City Fields</a>
             </div>
           </div>
         </div>
@@ -583,7 +600,7 @@
 
   <footer>
     <div class="container footer-panel">
-      <div>LFA West Soccer Kickarounds</div>
+      <div class="brand"><img class="brand-logo" src="assets/lfawest-logo.png" alt="LFA West logo" /><span>LFA West Soccer Kickarounds</span></div>
       <div>LFAWest.com</div>
     </div>
   </footer>
